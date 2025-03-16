@@ -22,7 +22,14 @@ class NotificationsFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
-        val adapter = NotificationsAdapter()
+        val adapter = NotificationsAdapter(
+            arrayOf(
+                HeaderItemModel("Today"),
+                FollowItemModel(R.drawable.ic_launcher_foreground, "Dean Winchester", "Hello"),
+                HeaderItemModel("Yesterday"),
+                LikesItemModel(R.drawable.ic_launcher_background, "Петр Иванов", R.drawable.ic_launcher_background)
+            )
+        )
         recyclerView.adapter = adapter
 
         recyclerView.layoutManager = LinearLayoutManager(context)
